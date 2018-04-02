@@ -62,4 +62,16 @@ public class SeckillServiceImplTest {
             System.out.println("秒杀未开启");
         }
     }
+
+    @Test
+    public void executeSeckillProcedureTest() {
+        long seckillId = 1001;
+        long phone = 1368011101;
+        Exposer exposer = seckillService.exportSeckillUrl(seckillId);
+        if (exposer.isExposed()) {
+            String md5 = exposer.getMd5();
+            SeckillExecution execution = seckillService.executeSeckillProcedure(seckillId, phone, md5);
+            System.out.println(execution.getStateInfo());
+        }
+    }
 }
