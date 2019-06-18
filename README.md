@@ -37,4 +37,4 @@
 
 数据库 MYSQL 5.20
 
-缓存方案 redis（win64）
+缓存 redis（win64）
